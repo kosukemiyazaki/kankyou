@@ -31,8 +31,8 @@ end
 %テストパターンファイルの読込
 xlsData=xlsread(['.\sim_pattern\',scenarioName,'.xlsx']);
 
-for i = 2:size(xlsData,2)
- data{i - 1} = [xlData(1:size(xlsData,1),1),xlsData(1:size(xlsData,1),i];
+for i = 2:size(xlsData,2);
+ data{i - 1} = [xlData(1:size(xlsData,1),1),xlsData(1:size(xlsData,1),i)];
 end
 
 %SILSパラメータ定義
