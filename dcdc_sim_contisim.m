@@ -9,18 +9,18 @@ clear;
 addpath(genpath('.'));
 
 %テストデータリストの格納
-[num,txt,raw] = xlread('.\sim_pattern\testdata_list.xlsx');
+[num,txt,raw] = xlsread('.\sim_pattern\testdata_list.xlsx');
 
 %テストパターン数確認
 ptn = size(raw,1);
 
-errorcomment = {'連続実行エラー項目'}
+errorcomment = {'連続実行エラー項目'};
 err_cnt = 0;
 
 for cnt = 2:ptn
  cnt_str = num2str(cnt-1);
  ptn_str = num2str(ptn-1);
- msg = waitbar((cnt-2)/(ptn-1)),['連続シミュレーション実行中...(',cnt_str,'/',ptn_str,')']); %waitbarの表示
+ msg = waitbar((cnt-2)/((ptn-1)),['連続シミュレーション実行中...(',cnt_str,'/',ptn_str,')']); %waitbarの表示
  trycnt = 0;
  senarioName = cell2mat(raw(cnt,1)); %テストパターン名定義
  
