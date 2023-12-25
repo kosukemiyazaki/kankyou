@@ -25,13 +25,13 @@ try
 catch exception
  error_cnt = error_cnt+1;
  trycnt = 1;
- errorcomment{end+1,1} = [num2str(error_cnt),'.',char(scenarioName)'参照モデルのパラメータ定義でエラー。パラメータファイルの定義方法、定義漏れを確認してください。'];
+ errorcomment{end+1,1} = [num2str(error_cnt),'.',char(scenarioName),'参照モデルのパラメータ定義でエラー。パラメータファイルの定義方法、定義漏れを確認してください。'];
 end
 
 %テストパターンファイルの読込
 xlsData=xlsread(['.\sim_pattern\',scenarioName,'.xlsx']);
 
-for i = 2:size(xlsData,2);
+for i = 2:size(xlsData,2)
  data{i - 1} = [xlData(1:size(xlsData,1),1),xlsData(1:size(xlsData,1),i];
 end
 
