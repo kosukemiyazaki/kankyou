@@ -71,11 +71,11 @@ if trycnt == 0
  try
   %テスト結果作成
   ScopeDtTemp=ScopeData;
-  writeData = table(ScopeDtTemp.time,'VariableNames',{'time'})
+  writeData = table(ScopeDtTemp.time,'VariableNames',{'time'});
   
-  for i = 1:(size(ScopeDtTemp.signals,2));
+  for i = 1:(size(ScopeDtTemp.signals,2))
    tempLabel = strrep(ScopeDtTemp.signals(i).label,'<','');
-   tempLabel = strrep(temp_Label,'>','')
+   tempLabel = strrep(temp_Label,'>','');
    addData = table(ScopeDtTemp.signals(i).values,'VariableNames',{tempLabel});
    writeData = [writeData addData];
   end
